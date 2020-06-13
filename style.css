@@ -1,5 +1,4 @@
 :root {
-    --main-gradient : linear-gradient(hsl(6, 100%, 80%) to hsl(335, 100%, 65%));
     --Pale-Blue: hsl(243, 100%, 93%);
     --Grayish-Blue: hsl(229, 7%, 55%);
     --Dark-Blue: hsl(228, 56%, 26%);
@@ -19,9 +18,11 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     position: relative;
-    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/design/desktop-design.jpg');
+    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/bg-desktop.svg');
     background-color: var(--Very-Dark-Blue);
     background-position: center;
+    background-position-y: 50vh;
+    background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
     justify-content: center;
@@ -71,7 +72,7 @@ width: 50%;
     align-items: center;
 }
 
-.utilities .img-container {
+ .img-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,12 +82,8 @@ width: 50%;
     margin: 5px;
     padding: auto;
     border-radius: 10px;
-}
-
-.img-container:hover {
     transition: 0.5s ease all;
 }
-
 .img-container:hover {
     cursor: pointer;
     background-color: var(--Pale-Blue);
@@ -95,7 +92,7 @@ width: 50%;
 .data-container {
     width: 38vw;
     height: 22vh;
-    opacity: 0.6 ;
+    position: relative;
 }
 
 .data-container h2 {
@@ -109,33 +106,91 @@ width: 50%;
 }
 
 
-.data-container .meter {
-    margin: 0 10px;
-    padding: 7px;
-	position: relative;
-	background: #fff;
-	border-radius: 25px;
-    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
-    margin-bottom: 10px;
+.data-container .progress {
+    background: rgba(0, 0, 0, 0.3);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    padding: 0 2px;
+    display: flex;
+    height: 15px;
+    width: 100%;
 }
 
-.meter span {
-    width: 85px;
-    height: 100px;
-    background-color: var(--main-gradient);
+.progress .progress-value {
+    animation: load 3s normal forwards;
+    border-radius: 100px;
+    background:linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 10px;
+    width: 0;
+    position: relative;
+}
+
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 81.5%; }
   }
+
+.progress-value::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 100%;
+    transform: translateX(-100%);
+}
 
 .data-container .data {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-size: .8rem;
+    font-weight: bold;
+    margin: 5px 0;
 }
 
 .data-container .textbox {
     background-color: white;
     color: black;
     position: absolute;
-    top: 0;
-    left: 80%;
-}
+    top: -50%;
+    left: 55%;
+    margin: 1rem;
+    padding:.5rem;
+    min-width: 170px;
+    min-height:70px;
+    border-radius: 10px 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .textbox::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: #ffffff;
+        border-bottom: 0px;
+        border-right: 0;
+        margin-left: -20px;
+        margin-bottom: -20px;
+    }
+    
+
+    .textbox p {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    .textbox span {
+        font-size: 2.5em;
+    }
 
