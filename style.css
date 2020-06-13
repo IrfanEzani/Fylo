@@ -1,0 +1,141 @@
+:root {
+    --main-gradient : linear-gradient(hsl(6, 100%, 80%) to hsl(335, 100%, 65%));
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    position: relative;
+    background:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/design/desktop-design.jpg');
+    background-color: var(--Very-Dark-Blue);
+    background-position: center;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+main {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.fylo-container, .data-container {
+    width: 25vw;
+    height: 29vh;
+    margin: 10px;
+    padding: 2rem;
+    background-color: var(--Dark-Blue);
+    border-radius: 1rem;
+}
+
+.fylo-container {
+    border-top-right-radius: 100px;
+}
+
+
+.fylo-container .title {
+    margin-left: 5px;
+}
+
+.fylo-container .title img {
+height: 100%;
+width: 50%;
+}
+
+.fylo-container .utilities {
+    margin: 1rem 0;
+    padding: 5px;
+    width: 70%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.utilities .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-Dark-Blue);
+    height: 100%;
+    width: 100%;
+    margin: 5px;
+    padding: auto;
+    border-radius: 10px;
+}
+
+.img-container:hover {
+    transition: 0.5s ease all;
+}
+
+.img-container:hover {
+    cursor: pointer;
+    background-color: var(--Pale-Blue);
+}
+
+.data-container {
+    width: 38vw;
+    height: 22vh;
+    opacity: 0.6 ;
+}
+
+.data-container h2 {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.data-container span {
+    font-weight: 700;
+}
+
+
+.data-container .meter {
+    margin: 0 10px;
+    padding: 7px;
+	position: relative;
+	background: #fff;
+	border-radius: 25px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    margin-bottom: 10px;
+}
+
+.meter span {
+    width: 85px;
+    height: 100px;
+    background-color: var(--main-gradient);
+  }
+
+.data-container .data {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-container .textbox {
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 80%;
+}
+
